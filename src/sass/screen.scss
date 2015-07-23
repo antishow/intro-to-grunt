@@ -1,0 +1,44 @@
+@mixin clearfix{
+	&::before, &::after{
+		content: " ";
+		clear: both;
+		display: table;
+	}
+}
+
+$main-color: magenta;
+
+body{
+	background-color: #eee;
+	font-family: Helvetica, Arial, sans-serif;
+	margin: 0;
+}
+
+#root{
+	@include clearfix;
+	max-width: 960px;
+	background-color: white;
+	padding: 0 1em;
+	margin: 0 auto;
+}
+
+header{
+	@include clearfix;
+	margin: 1em 0;
+	border-radius: 2em;
+	background-color: $main-color;
+
+	h1{
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+		padding: 0 1em;
+		color: white;
+	}
+}
+
+footer{
+	font-size: 12px;
+	border-top: 1px solid $main-color;
+	margin-top: 1em;
+	padding-top: 1em;
+	margin-bottom: 100px;
+}
